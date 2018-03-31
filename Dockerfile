@@ -36,17 +36,16 @@ RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases
         "$ALPINE_GLIBC_I18N_PACKAGE_FILENAME"
 
 RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh openssl curl && \
+    apk add --no-cache bash git openssh openssl && \
     rm -rf /var/cache/apk/*
 
-RUN go get -u github.com/ckaznocha/protoc-gen-lint && \
+RUN wget https://github.com/google/protobuf/releases/download/v3.3.0/${PROTOC_FILE} && \
+    unzip -o $PROTOC_FILE -d /usr/local bin/protoc && \
+    rm $PROTOC_FILE && \
+    go get -u github.com/ckaznocha/protoc-gen-lint && \
     go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway && \
     go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger && \
     go get -u github.com/golang/protobuf/protoc-gen-go && \
     rm -rf $GOPATH/src/github.com && \
     rm -rf $GOPATH/src/google.golang.org
-
-RUN curl -OL https://github.com/google/protobuf/releases/download/v3.3.0/${PROTOC_FILE} && \
-    unzip -o $PROTOC_FILE -d /usr/local bin/protoc && \
-    rm $PROTOC_FILE
 
