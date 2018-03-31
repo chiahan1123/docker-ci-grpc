@@ -7,7 +7,6 @@ Docker image for Continuous Integration (CI) for gRPC services
 * Supports fix for Alpine not supporting glibc (https://github.com/os72/protoc-jar/issues/15)
 
 * Tools:
-  * [protobuf](http://google.github.io/proto-lens/installing-protoc.html)
   * [dep](https://github.com/golang/dep)
   * [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)
   * [protoc-gen-lint](https://github.com/ckaznocha/protoc-gen-lint)

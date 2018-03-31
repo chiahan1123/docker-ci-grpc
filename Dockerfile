@@ -1,7 +1,6 @@
 FROM golang:1.10-alpine
 LABEL maintainer="Eric Chang <chiahan1123@gmail.com>"
 
-ENV PROTOC_FILE protoc-3.3.0-linux-x86_64.zip
 ENV LANG=C.UTF-8
 
 RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases/download" && \
@@ -36,13 +35,10 @@ RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases
         "$ALPINE_GLIBC_I18N_PACKAGE_FILENAME"
 
 RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh openssl && \
+    apk add --no-cache bash git openssh openssl protobuf-dev && \
     rm -rf /var/cache/apk/*
 
-RUN wget https://github.com/google/protobuf/releases/download/v3.3.0/${PROTOC_FILE} && \
-    unzip -o $PROTOC_FILE -d /usr/local bin/protoc && \
-    rm $PROTOC_FILE && \
-    go get -u github.com/golang/dep/cmd/dep && \
+RUN go get -u github.com/golang/dep/cmd/dep && \
     go get -u github.com/ckaznocha/protoc-gen-lint && \
     go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway && \
     go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger && \
