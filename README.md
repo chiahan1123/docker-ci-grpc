@@ -2,8 +2,8 @@
 Docker image for Continuous Integration (CI) for gRPC services
 
 * Source Image:
-  * ```golang:1.9-alpine``` (https://hub.docker.com/_/golang/)
-  
+  * ```golang:1.10-alpine``` (https://hub.docker.com/_/golang/)
+
 * Supports fix for Alpine not supporting glibc (https://github.com/os72/protoc-jar/issues/15)
 
 * Tools:

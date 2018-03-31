@@ -1,4 +1,4 @@
-FROM golang:1.9-alpine
+FROM golang:1.10-alpine
 LABEL maintainer="Eric Chang <chiahan1123@gmail.com>"
 
 ENV PROTOC_FILE protoc-3.3.0-linux-x86_64.zip
