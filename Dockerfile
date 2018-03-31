@@ -46,7 +46,4 @@ RUN wget https://github.com/google/protobuf/releases/download/v3.3.0/${PROTOC_FI
     go get -u github.com/ckaznocha/protoc-gen-lint && \
     go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway && \
     go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger && \
-    go get -u github.com/golang/protobuf/protoc-gen-go && \
-    rm -rf $GOPATH/src/github.com && \
-    rm -rf $GOPATH/src/google.golang.org
-
+    go get -u github.com/golang/protobuf/protoc-gen-go
