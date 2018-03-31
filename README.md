@@ -8,6 +8,7 @@ Docker image for Continuous Integration (CI) for gRPC services
 
 * Tools:
   * [protobuf](http://google.github.io/proto-lens/installing-protoc.html)
+  * [dep](https://github.com/golang/dep)
   * [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)
   * [protoc-gen-lint](https://github.com/ckaznocha/protoc-gen-lint)
 

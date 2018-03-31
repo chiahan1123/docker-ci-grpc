@@ -42,6 +42,7 @@ RUN apk update && apk upgrade && \
 RUN wget https://github.com/google/protobuf/releases/download/v3.3.0/${PROTOC_FILE} && \
     unzip -o $PROTOC_FILE -d /usr/local bin/protoc && \
     rm $PROTOC_FILE && \
+    go get -u github.com/golang/dep/cmd/dep && \
     go get -u github.com/ckaznocha/protoc-gen-lint && \
     go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway && \
     go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger && \
