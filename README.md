@@ -10,5 +10,6 @@ Docker image for Continuous Integration (CI) for gRPC services
   * [dep](https://github.com/golang/dep)
   * [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)
   * [protoc-gen-lint](https://github.com/ckaznocha/protoc-gen-lint)
+  * [golint](https://github.com/golang/lint)
 
 Docker Hub: [docker-ci-grpc](https://hub.docker.com/r/chiahan1123/docker-ci-grpc/)
