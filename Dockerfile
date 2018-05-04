@@ -1,4 +1,4 @@
-FROM golang:1.10-alpine
+FROM golang:1.10.1-alpine
 LABEL maintainer="Eric Chang <chiahan1123@gmail.com>"
 
 ENV LANG=C.UTF-8
